@@ -18,8 +18,8 @@ class merge(restful.Resource):
         #This is the msc.com instance connection
         #You see I own this town, you best not come around if you
         #If you wanna mess around like that, that's just how it is.
-        jsonRequest = request.get_json(force = True)
-        ID = jsonRequest['ID']
+        #jsonRequest = request.get_json(force = True)
+        #ID = jsonRequest['ID']
 
         client = suds_marketo.Client(soap_endpoint='https://970-WBY-466.mktoapi.com/soap/mktows/2_3',
                                      user_id='opentable1_62824687530E8A604131D1',
