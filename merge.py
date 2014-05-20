@@ -9,11 +9,11 @@ from flask.ext.jsonpify import jsonify
 
 app = Flask(__name__)
 api = restful.Api(app)
-#app.debug = True
+app.debug = True
 
 class merge(restful.Resource):
 #@app.route('/<ID>', methods=['POST'])
-    def get(self):
+    def get(self, ID):
         #Establish Connection, create the client handler
         #This is the msc.com instance connection
         #You see I own this town, you best not come around if you
