@@ -19,7 +19,7 @@ class merge(restful.Resource):
                                      user_id='opentable1_62824687530E8A604131D1',
                                      encryption_key='5335137655137532553300EE88AA661244113492BE69')
 
-        NewContactFromSFDC = escape(ID)
+        NewContactFromSFDC = str(ID)
         
         #get the leads from Marketo
         lead = client.get_lead_IDNUM(NewContactFromSFDC)
