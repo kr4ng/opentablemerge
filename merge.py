@@ -11,7 +11,7 @@ api = restful.Api(app)
 
 #class merge(restful.Resource):
 @app.route('/<int:ID>', methods=['GET'])
-def get(self, ID):
+def get(ID):
     #Establish Connection, create the client handler
     #This is the msc.com instance connection
     #You see I own this town, you best not come around if you
