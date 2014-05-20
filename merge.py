@@ -34,7 +34,7 @@ class merge(restful.Resource):
         return None
         #test = client.__getattribute__('Attribute')
 
-api.add_resource(sidetab, '/<int:ID>')
+api.add_resource(merge, '/<int:ID>')
 
 if __name__ == '__main__':
     #app.run(debug=True)
