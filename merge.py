@@ -23,13 +23,10 @@ class merge(restful.Resource):
         
         #get the leads from Marketo
         lead = client.get_lead_IDNUM(NewContactFromSFDC)
-        try:
-            originalmarketoid = lead.originalmarketoid
-            #make sure the original lead exists
-            leadtomerge = client.get_lead(originalmarketoid)
-            client.merge_leads(ID, orignalmarketoid)
-        except:
-            return None
+        for i in range(0,len(lead.leadRecordList.leadRecord[0].leadAttributeList[0])):
+            if 'mKTOLeadID' == lead.leadRecordList.leadRecord[0].leadAttributeList[0][i].attrName:
+                originalmarketoid = lead.leadRecordList.leadRecord[0].leadAttributeList[0][i].attrValue
+        client.merge_leads(NewContactFromSFDC,originalmarketoid)
 
         return None
         #test = client.__getattribute__('Attribute')
