@@ -26,7 +26,6 @@ class merge(restful.Resource):
                                      encryption_key='5335137655137532553300EE88AA661244113492BE69')
 
         NewContactFromSFDC = str(ID)
-        
         #get the leads from Marketo
         lead = client.get_lead_IDNUM(NewContactFromSFDC)
         for i in range(0,len(lead.leadRecordList.leadRecord[0].leadAttributeList[0])):
