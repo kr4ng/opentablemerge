@@ -8,8 +8,8 @@ from flask.ext import restful
 from flask.ext.jsonpify import jsonify
 
 app = Flask(__name__)
-#api = restful.Api(app)
-app.debug = True
+api = restful.Api(app)
+#app.debug = True
 
 class merge(restful.Resource):
 #@app.route('/<ID>', methods=['POST'])
@@ -34,7 +34,8 @@ class merge(restful.Resource):
                 originalmarketoid = lead.leadRecordList.leadRecord[0].leadAttributeList[0][i].attrValue
         client.merge_leads(NewContactFromSFDC,originalmarketoid)
 
-        return json.jsonify(Message = "",ResultCode = 0)
+        #return json.jsonify(Message = "",ResultCode = 0)
+        return None
 
 api.add_resource(merge, '/<int:ID>')
 
